@@ -1,0 +1,462 @@
+/* ============================================================
+   PORTAFOLIO PERSONAL — Desarrollador de Software
+   Hoja de estilos personalizada sobre Bootstrap 5.3
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Paleta de colores centralizada (tonos azules + neutros)
+   ------------------------------------------------------------ */
+:root {
+  /* Paleta corporativa */
+  --c-azul-marino: #0d1b2a;      /* Fondo oscuro principal        */
+  --c-azul-marino-2: #16263a;    /* Variante de fondo oscuro      */
+  --c-azul-acero: #3d5a80;       /* Color secundario / estructura */
+  --c-azul-electrico: #5b9df9;   /* Acento: botones y destacados  */
+  --c-fondo-neutro: #f4f7fb;     /* Fondo claro de secciones      */
+  --c-borde-suave: #dce4ee;      /* Bordes y separadores          */
+  --c-texto: #1b263b;            /* Texto principal               */
+  --c-texto-suave: #5c6b82;      /* Texto secundario              */
+
+  /* Sobrescritura de variables nativas de Bootstrap 5 */
+  --bs-primary: #3d5a80;
+  --bs-primary-rgb: 61, 90, 128;
+  --bs-primary-text-emphasis: #243b56;
+  --bs-primary-bg-subtle: #e8eef7;
+  --bs-primary-border-subtle: #c3d2e4;
+  --bs-link-color: #3d5a80;
+  --bs-link-hover-color: #243b56;
+  --bs-body-color: #1b263b;
+  --bs-body-bg: #ffffff;
+  --bs-body-font-family: "Raleway", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-border-color: #dce4ee;
+}
+
+/* ------------------------------------------------------------
+   2. Base y tipografía
+   ------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+}
+
+/* Compensación del ancla al usar navbar fija */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+::selection {
+  background-color: var(--c-azul-electrico);
+  color: var(--c-azul-marino);
+}
+
+/* ------------------------------------------------------------
+   3. Navegación
+   ------------------------------------------------------------ */
+.navbar-portafolio {
+  background-color: var(--c-azul-marino);
+  box-shadow: 0 2px 12px rgba(13, 27, 42, 0.35);
+}
+
+.navbar-portafolio .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar-portafolio .nav-link {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-portafolio .nav-link:hover,
+.navbar-portafolio .nav-link:focus,
+.navbar-portafolio .nav-link.active {
+  color: var(--c-azul-electrico);
+}
+
+/* ------------------------------------------------------------
+   4. Hero (presentación del perfil)
+   ------------------------------------------------------------ */
+.hero {
+  padding: 5.5rem 0 5.5rem;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(91, 157, 249, 0.16), transparent 45%),
+    linear-gradient(140deg, var(--c-azul-marino) 25%, var(--c-azul-acero) 100%);
+}
+
+/* Foto de perfil circular con anillo de acento */
+.foto-perfil {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 4px solid var(--c-azul-electrico);
+  box-shadow:
+    0 0 0 8px rgba(91, 157, 249, 0.18),
+    0 1rem 2.5rem rgba(13, 27, 42, 0.45);
+  margin-bottom: 1.75rem;
+}
+
+.hero-saludo {
+  color: var(--c-azul-electrico);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero-nombre {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-titulo {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-descripcion {
+  max-width: 640px;
+  margin-inline: auto;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Stack tecnológico destacado bajo el CTA */
+.hero-stack {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ------------------------------------------------------------
+   5. Secciones genéricas
+   ------------------------------------------------------------ */
+.seccion {
+  padding: 5rem 0;
+}
+
+.seccion-fondo {
+  background-color: var(--c-fondo-neutro);
+}
+
+.seccion-oscura {
+  background-color: var(--c-azul-marino);
+  color: #ffffff;
+}
+
+.titulo-seccion {
+  font-weight: 700;
+  color: var(--c-azul-marino);
+}
+
+.subtitulo-seccion {
+  max-width: 640px;
+  color: var(--c-texto-suave);
+}
+
+.seccion-oscura .titulo-seccion {
+  color: #ffffff;
+}
+
+.seccion-oscura .subtitulo-seccion {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Línea decorativa bajo los títulos de sección */
+.separador {
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--c-azul-electrico);
+}
+
+/* ------------------------------------------------------------
+   6. Botón de acento (CTA principal)
+   ------------------------------------------------------------ */
+.btn-electrico {
+  --bs-btn-bg: var(--c-azul-electrico);
+  --bs-btn-color: var(--c-azul-marino);
+  --bs-btn-border-color: var(--c-azul-electrico);
+  --bs-btn-hover-bg: #7ab0fb;
+  --bs-btn-hover-color: var(--c-azul-marino);
+  --bs-btn-hover-border-color: #7ab0fb;
+  --bs-btn-active-bg: #4a8be8;
+  --bs-btn-active-color: var(--c-azul-marino);
+  --bs-btn-active-border-color: #4a8be8;
+  --bs-btn-font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   7. Sobre mí
+   ------------------------------------------------------------ */
+.tarjeta-datos {
+  border: 1px solid var(--c-borde-suave);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(13, 27, 42, 0.08);
+}
+
+.tarjeta-datos .list-group-item {
+  border-color: var(--c-borde-suave);
+  color: var(--c-texto-suave);
+  font-size: 0.9rem;
+}
+
+.tarjeta-datos .list-group-item i {
+  width: 1.4rem;
+  color: var(--c-azul-acero);
+}
+
+.dato-valor {
+  color: var(--c-texto);
+  font-weight: 600;
+}
+
+/* Cifras destacadas */
+.cifra {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--c-azul-acero);
+}
+
+.cifra-etiqueta {
+  color: var(--c-texto-suave);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ------------------------------------------------------------
+   8. Habilidades (categorías + badges)
+   ------------------------------------------------------------ */
+.tarjeta-habilidad {
+  height: 100%;
+  border: 1px solid var(--c-borde-suave);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.tarjeta-habilidad:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(13, 27, 42, 0.12);
+}
+
+/* Icono cuadrado que encabeza cada categoría */
+.icono-categoria {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 0.6rem;
+  background-color: var(--c-azul-marino);
+  color: var(--c-azul-electrico);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+/* Badge individual de tecnología */
+.badge-habilidad {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-azul-acero);
+  background-color: var(--c-fondo-neutro);
+  border: 1px solid var(--c-borde-suave);
+  padding: 0.4em 0.75em;
+}
+
+/* ------------------------------------------------------------
+   9. Proyectos destacados
+   ------------------------------------------------------------ */
+.tarjeta-proyecto {
+  height: 100%;
+  border: 1px solid var(--c-borde-suave);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.tarjeta-proyecto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0.75rem 1.75rem rgba(13, 27, 42, 0.15);
+}
+
+/* Cabecera ilustrada de la tarjeta (degradado azul + icono) */
+.proyecto-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  font-size: 2.6rem;
+  color: var(--c-azul-electrico);
+  background: linear-gradient(135deg, var(--c-azul-marino), var(--c-azul-acero));
+}
+
+.tarjeta-proyecto .card-title {
+  color: var(--c-azul-marino);
+  font-weight: 700;
+}
+
+.tarjeta-proyecto .card-text {
+  color: var(--c-texto-suave);
+  font-size: 0.925rem;
+}
+
+/* Enlaces a código fuente y demo */
+.enlace-proyecto {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--c-azul-acero);
+  text-decoration: none;
+}
+
+.enlace-proyecto:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   10. Experiencia y educación (línea de tiempo)
+   ------------------------------------------------------------ */
+.linea-tiempo-item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 1.75rem;
+}
+
+.linea-tiempo-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Línea vertical que conecta los hitos */
+.linea-tiempo-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 26px;
+  bottom: -4px;
+  width: 2px;
+  background-color: var(--c-borde-suave);
+}
+
+/* Punto de cada hito */
+.linea-tiempo-item::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 3px solid var(--c-azul-acero);
+}
+
+.linea-tiempo-fecha {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--c-azul-acero);
+}
+
+.linea-tiempo-cargo {
+  font-weight: 700;
+  color: var(--c-azul-marino);
+  margin-bottom: 0.15rem;
+}
+
+.linea-tiempo-lugar {
+  font-size: 0.875rem;
+  color: var(--c-texto-suave);
+}
+
+.linea-tiempo-item p {
+  margin-bottom: 0;
+  font-size: 0.925rem;
+  color: var(--c-texto-suave);
+}
+
+/* ------------------------------------------------------------
+   11. Contacto
+   ------------------------------------------------------------ */
+.icono-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.icono-social:hover {
+  background-color: var(--c-azul-electrico);
+  border-color: var(--c-azul-electrico);
+  color: var(--c-azul-marino);
+}
+
+/* ------------------------------------------------------------
+   12. Pie de página
+   ------------------------------------------------------------ */
+.footer {
+  background-color: var(--c-azul-marino-2);
+  color: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--c-azul-electrico);
+}
+
+/* ------------------------------------------------------------
+   13. Ajustes responsive y accesibilidad
+   ------------------------------------------------------------ */
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .foto-perfil {
+    width: 150px;
+    height: 150px;
+  }
+
+  .seccion {
+    padding: 3.5rem 0;
+  }
+}
+
+/* Respeta la preferencia del usuario de reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tarjeta-habilidad,
+  .tarjeta-proyecto,
+  .icono-social {
+    transition: none;
+  }
+}

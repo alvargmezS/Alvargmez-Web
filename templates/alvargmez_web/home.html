@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portafolio profesional de Álvaro Gómez, Desarrollador de Software. Proyectos, experiencia y contacto.">
+    <title>Álvaro Gómez | Desarrollador de Software</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="../static/webPersonalApp/vendor/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome (iconografía) -->
+    <link href="../static/webPersonalApp/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Tipografías: Raleway (textos) y JetBrains Mono (código/etiquetas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados del portafolio -->
+    <link href="../static/webPersonalApp/css/gestion.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==================== Navegación ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-portafolio">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">Álvaro Gómez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+                    aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacion">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ==================== Hero ==================== -->
+        <section id="inicio" class="hero text-center">
+            <div class="container">
+                <img class="foto-perfil" src="../static/webPersonalApp/img/perfil.jpg" alt="Foto de perfil de Álvaro Gómez">
+                <p class="hero-saludo mb-2">Hola, soy</p>
+                <h1 class="hero-nombre mb-3">Álvaro Gómez</h1>
+                <h2 class="hero-titulo mb-4">Desarrollador de Software</h2>
+                <p class="hero-descripcion mb-4">
+                    Diseño y construyo aplicaciones web robustas y escalables, con especial atención
+                    a la calidad del código y a la experiencia de usuario.
+                </p>
+                <!-- CTA principal -->
+                <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                    <a href="#proyectos" class="btn btn-electrico btn-lg px-4">Ver proyectos</a>
+                    <a href="#contacto" class="btn btn-outline-light btn-lg px-4">Contactar</a>
+                </div>
+                <p class="hero-stack mb-0">Java &middot; Spring Boot &middot; JavaScript &middot; React &middot; Docker</p>
+            </div>
+        </section>
+
+        <!-- ==================== Sobre mí ==================== -->
+        <section id="sobre-mi" class="seccion">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="titulo-seccion">Sobre mí</h2>
+                    <div class="separador mx-auto my-3"></div>
+                    <p class="subtitulo-seccion mx-auto mb-0">Un poco de contexto sobre mi perfil profesional.</p>
+                </div>
+
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-8">
+                        <p class="text-secondary lh-lg">
+                            Soy desarrollador de software con experiencia en el ciclo completo de aplicaciones web:
+                            desde el análisis de requisitos y el diseño de APIs hasta el despliegue y mantenimiento
+                            en producción. Me motiva resolver problemas reales con soluciones simples, testeables
+                            y bien documentadas.
+                        </p>
+                        <p class="text-secondary lh-lg mb-4">
+                            Acostumbro a trabajar en entornos ágiles, colaborando estrechamente con equipos de
+                            producto y diseño. Apuesto por el aprendizaje continuo y por compartir conocimiento
+                            con el equipo.
+                        </p>
+                        <!-- Cifras destacadas (personalizables) -->
+                        <div class="row text-center g-4">
+                            <div class="col-4">
+                                <p class="cifra mb-0">3+</p>
+                                <p class="cifra-etiqueta mb-0">Años de experiencia</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="cifra mb-0">20+</p>
+                                <p class="cifra-etiqueta mb-0">Proyectos entregados</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="cifra mb-0">12+</p>
+                                <p class="cifra-etiqueta mb-0">Tecnologías</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de datos rápidos -->
+                    <div class="col-lg-4">
+                        <div class="card tarjeta-datos">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa fa-briefcase"></i> Rol: <span class="dato-valor">Full-Stack</span></li>
+                                <li class="list-group-item"><i class="fa fa-map-marker"></i> Ubicación: <span class="dato-valor">España</span></li>
+                                <li class="list-group-item"><i class="fa fa-envelope"></i> Email: <span class="dato-valor">correo@ejemplo.com</span></li>
+                                <li class="list-group-item"><i class="fa fa-check-circle"></i> <span class="dato-valor">Disponible</span> para trabajar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Habilidades / Tech Stack ==================== -->
+        <section id="habilidades" class="seccion seccion-fondo">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="titulo-seccion">Habilidades</h2>
+                    <div class="separador mx-auto my-3"></div>
+                    <p class="subtitulo-seccion mx-auto mb-0">Mi stack tecnológico organizado por categorías.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Frontend -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card tarjeta-habilidad h-100">
+                            <div class="card-body">
+                                <span class="icono-categoria"><i class="fa fa-laptop"></i></span>
+                                <h5 class="card-title mb-3">Frontend</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-habilidad">HTML5</span>
+                                    <span class="badge rounded-pill badge-habilidad">CSS3</span>
+                                    <span class="badge rounded-pill badge-habilidad">JavaScript</span>
+                                    <span class="badge rounded-pill badge-habilidad">TypeScript</span>
+                                    <span class="badge rounded-pill badge-habilidad">React</span>
+                                    <span class="badge rounded-pill badge-habilidad">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card tarjeta-habilidad h-100">
+                            <div class="card-body">
+                                <span class="icono-categoria"><i class="fa fa-server"></i></span>
+                                <h5 class="card-title mb-3">Backend</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-habilidad">Java</span>
+                                    <span class="badge rounded-pill badge-habilidad">Spring Boot</span>
+                                    <span class="badge rounded-pill badge-habilidad">Python</span>
+                                    <span class="badge rounded-pill badge-habilidad">Django</span>
+                                    <span class="badge rounded-pill badge-habilidad">Node.js</span>
+                                    <span class="badge rounded-pill badge-habilidad">MySQL</span>
+                                    <span class="badge rounded-pill badge-habilidad">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card tarjeta-habilidad h-100">
+                            <div class="card-body">
+                                <span class="icono-categoria"><i class="fa fa-cogs"></i></span>
+                                <h5 class="card-title mb-3">Herramientas</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-habilidad">Git</span>
+                                    <span class="badge rounded-pill badge-habilidad">GitHub</span>
+                                    <span class="badge rounded-pill badge-habilidad">Docker</span>
+                                    <span class="badge rounded-pill badge-habilidad">Linux</span>
+                                    <span class="badge rounded-pill badge-habilidad">Postman</span>
+                                    <span class="badge rounded-pill badge-habilidad">Jira</span>
+                                    <span class="badge rounded-pill badge-habilidad">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Proyectos destacados ==================== -->
+        <section id="proyectos" class="seccion">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="titulo-seccion">Proyectos destacados</h2>
+                    <div class="separador mx-auto my-3"></div>
+                    <p class="subtitulo-seccion mx-auto mb-0">Una selección de los proyectos de los que estoy más orgulloso.</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Proyecto 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card tarjeta-proyecto">
+                            <div class="proyecto-cabecera"><i class="fa fa-server"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">API de Gestión de Pedidos</h5>
+                                <p class="card-text">API REST para la gestión de pedidos e inventario, con autenticación JWT, documentación OpenAPI y tests de integración.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge rounded-pill badge-habilidad">Java</span>
+                                    <span class="badge rounded-pill badge-habilidad">Spring Boot</span>
+                                    <span class="badge rounded-pill badge-habilidad">MySQL</span>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card tarjeta-proyecto">
+                            <div class="proyecto-cabecera"><i class="fa fa-bar-chart"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">Panel de Administración</h5>
+                                <p class="card-text">Dashboard web con métricas en tiempo real, gestión de usuarios y exportación de informes en varios formatos.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge rounded-pill badge-habilidad">TypeScript</span>
+                                    <span class="badge rounded-pill badge-habilidad">React</span>
+                                    <span class="badge rounded-pill badge-habilidad">Chart.js</span>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card tarjeta-proyecto">
+                            <div class="proyecto-cabecera"><i class="fa fa-mobile"></i></div>
+                            <div class="card-body">
+                                <h5 class="card-title">App de Seguimiento de Gastos</h5>
+                                <p class="card-text">Aplicación móvil para el control de gastos personales, con sincronización en la nube y reportes mensuales automáticos.</p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge rounded-pill badge-habilidad">Flutter</span>
+                                    <span class="badge rounded-pill badge-habilidad">Dart</span>
+                                    <span class="badge rounded-pill badge-habilidad">Firebase</span>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Experiencia y educación ==================== -->
+        <section id="experiencia" class="seccion seccion-fondo">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="titulo-seccion">Experiencia y educación</h2>
+                    <div class="separador mx-auto my-3"></div>
+                    <p class="subtitulo-seccion mx-auto mb-0">Mi trayectoria profesional y formativa.</p>
+                </div>
+
+                <div class="row g-5">
+                    <!-- Experiencia -->
+                    <div class="col-lg-6">
+                        <h3 class="h5 mb-4"><i class="fa fa-briefcase me-2 text-primary"></i>Experiencia profesional</h3>
+                        <div class="linea-tiempo">
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2023 — Actualidad</span>
+                                <h4 class="linea-tiempo-cargo h6">Desarrollador Full-Stack</h4>
+                                <p class="linea-tiempo-lugar">Tecnología Indacom S.L.</p>
+                                <p>Desarrollo y mantenimiento de aplicaciones web con Spring Boot y React, liderando la migración de servicios a contenedores Docker.</p>
+                            </div>
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2021 — 2023</span>
+                                <h4 class="linea-tiempo-cargo h6">Desarrollador Backend</h4>
+                                <p class="linea-tiempo-lugar">Soluciones Web Ábaco</p>
+                                <p>Diseño de APIs REST y optimización de consultas sobre bases de datos MySQL y PostgreSQL.</p>
+                            </div>
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2019 — 2021</span>
+                                <h4 class="linea-tiempo-cargo h6">Desarrollador Junior</h4>
+                                <p class="linea-tiempo-lugar">Freelance</p>
+                                <p>Colaboración en proyectos web para pequeños negocios: landings, tiendas online y paneles de gestión.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Educación -->
+                    <div class="col-lg-6">
+                        <h3 class="h5 mb-4"><i class="fa fa-graduation-cap me-2 text-primary"></i>Educación</h3>
+                        <div class="linea-tiempo">
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2017 — 2019</span>
+                                <h4 class="linea-tiempo-cargo h6">CFGS Desarrollo de Aplicaciones Multiplataforma</h4>
+                                <p class="linea-tiempo-lugar">Instituto de Educación Secundaria</p>
+                                <p>Formación en desarrollo de software de escritorio, web y móvil, con prácticas en empresa.</p>
+                            </div>
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2020</span>
+                                <h4 class="linea-tiempo-cargo h6">Certificación Profesional de Python</h4>
+                                <p class="linea-tiempo-lugar">Plataforma online</p>
+                                <p>Especialización en programación Python aplicada a backend y automatización de tareas.</p>
+                            </div>
+                            <div class="linea-tiempo-item">
+                                <span class="linea-tiempo-fecha">2021</span>
+                                <h4 class="linea-tiempo-cargo h6">Especialización en Arquitectura Cloud</h4>
+                                <p class="linea-tiempo-lugar">Plataforma online</p>
+                                <p>Contenedores, integración continua y despliegue de aplicaciones en la nube.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== Contacto ==================== -->
+        <section id="contacto" class="seccion seccion-oscura text-center">
+            <div class="container">
+                <h2 class="titulo-seccion">¿Hablamos?</h2>
+                <div class="separador mx-auto my-3"></div>
+                <p class="subtitulo-seccion mx-auto mb-4">
+                    Estoy abierto a nuevas oportunidades y colaboraciones.
+                    Escríbeme y te responderé lo antes posible.
+                </p>
+                <a href="mailto:correo@ejemplo.com" class="btn btn-electrico btn-lg px-4 mb-4">
+                    <i class="fa fa-envelope me-2"></i>Enviar un email
+                </a>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="icono-social" aria-label="GitHub"><i class="fa fa-github fa-lg"></i></a>
+                    <a href="#" class="icono-social" aria-label="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="icono-social" aria-label="Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== Pie de página ==================== -->
+    <footer class="footer py-4">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+            <span>&copy; 2026 Álvaro Gómez. Todos los derechos reservados.</span>
+            <a href="#inicio"><i class="fa fa-arrow-up me-1"></i>Volver arriba</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 (bundle incluye Popper) -->
+    <script src="../static/webPersonalApp/vendor/bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
