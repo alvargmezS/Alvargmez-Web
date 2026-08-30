@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cvApp.apps.CvappConfig',
+    'proyectosApp.apps.ProyectosappConfig',
+    'contactoApp.apps.ContactoConfig',
+    'blogApp.apps.BlogappConfig'
 ]
 
 MIDDLEWARE = [
