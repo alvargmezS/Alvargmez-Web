@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Álvaro Gómez | Desarrollador de Software{% endblock title %}</title>
 
+    {% load static %}
+
     <!-- Bootstrap 5 -->
     <link href="{% static 'alvargmez_web/vendor/bootstrap5/css/bootstrap.min.css' %}" rel="stylesheet">
 
@@ -23,30 +25,30 @@
     {% endblock extra_head %}
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <!-- ==================== Navegación ==================== -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-portafolio">
         <div class="container">
-            <a class="navbar-brand" href="#inicio">Álvaro Gómez</a>
+            <a class="navbar-brand" href="{% url 'home' %}#inicio">Álvaro Gómez</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
                     aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'proyectos' %}">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main>
+    <main class="flex-shrink-0">
 
         <!-- Contenido cambiante -->
         {% block content %}
@@ -56,10 +58,10 @@
     </main>
 
     <!-- ==================== Pie de página ==================== -->
-    <footer class="footer py-4">
+    <footer class="footer py-4 mt-auto">
         <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
             <span>&copy; 2026 Álvaro Gómez. Todos los derechos reservados.</span>
-            <a href="#inicio"><i class="fa fa-arrow-up me-1"></i>Volver arriba</a>
+            <a href="{% url 'home' %}#inicio"><i class="fa fa-arrow-up me-1"></i>Volver arriba</a>
         </div>
     </footer>
 

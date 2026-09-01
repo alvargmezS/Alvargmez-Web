@@ -1,0 +1,86 @@
+{% extends 'alvargmez_web/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos</title>
+</head>
+<body>
+
+{% block content %}
+    <!-- ==================== Proyectos destacados ==================== -->
+    <section id="proyectos" class="seccion">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="titulo-seccion">Proyectos destacados</h2>
+                <div class="separador mx-auto my-3"></div>
+                <p class="subtitulo-seccion mx-auto mb-0">Una selección de los proyectos de los que estoy más orgulloso.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Proyecto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="card tarjeta-proyecto">
+                        <div class="proyecto-cabecera"><i class="fa fa-server"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">API de Gestión de Pedidos</h5>
+                            <p class="card-text">API REST para la gestión de pedidos e inventario, con autenticación JWT, documentación OpenAPI y tests de integración.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge rounded-pill badge-habilidad">Java</span>
+                                <span class="badge rounded-pill badge-habilidad">Spring Boot</span>
+                                <span class="badge rounded-pill badge-habilidad">MySQL</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="card tarjeta-proyecto">
+                        <div class="proyecto-cabecera"><i class="fa fa-bar-chart"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Panel de Administración</h5>
+                            <p class="card-text">Dashboard web con métricas en tiempo real, gestión de usuarios y exportación de informes en varios formatos.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge rounded-pill badge-habilidad">TypeScript</span>
+                                <span class="badge rounded-pill badge-habilidad">React</span>
+                                <span class="badge rounded-pill badge-habilidad">Chart.js</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <article class="card tarjeta-proyecto">
+                        <div class="proyecto-cabecera"><i class="fa fa-mobile"></i></div>
+                        <div class="card-body">
+                            <h5 class="card-title">App de Seguimiento de Gastos</h5>
+                            <p class="card-text">Aplicación móvil para el control de gastos personales, con sincronización en la nube y reportes mensuales automáticos.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge rounded-pill badge-habilidad">Flutter</span>
+                                <span class="badge rounded-pill badge-habilidad">Dart</span>
+                                <span class="badge rounded-pill badge-habilidad">Firebase</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
+                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+</body>
+</html>

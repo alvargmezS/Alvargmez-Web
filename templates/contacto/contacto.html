@@ -1,0 +1,35 @@
+{% extends 'alvargmez_web/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Contacto | Álvaro Gómez{% endblock title %}
+
+{% block content %}
+
+    <!-- ==================== Contacto ==================== -->
+    <section id="contacto" class="seccion seccion-fondo">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="titulo-seccion">Contacto</h2>
+                <div class="separador mx-auto my-3"></div>
+                <p class="subtitulo-seccion mx-auto mb-0">
+                    ¿Crees que encajo en tu equipo? Sería genial, responderé lo antes posible.
+                </p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <form action="{% url 'contacto' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-electrico btn-lg px-4">
+                                <i class="fa fa-paper-plane me-2"></i>Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

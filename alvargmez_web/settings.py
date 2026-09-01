@@ -41,11 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'cvApp.apps.CvappConfig',
     'proyectosApp.apps.ProyectosappConfig',
     'contactoApp.apps.ContactoConfig',
     'blogApp.apps.BlogappConfig'
 ]
+
+# django-crispy-forms con plantillas de Bootstrap 5
+# https://django-crispy-forms.github.io/crispy-bootstrap5/
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
