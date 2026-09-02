@@ -18,67 +18,52 @@
                 <p class="subtitulo-seccion mx-auto mb-0">Una selección de los proyectos de los que estoy más orgulloso.</p>
             </div>
 
-            <div class="row g-4">
-                <!-- Proyecto 1 -->
-                <div class="col-md-6 col-lg-4">
+            {% if proyectos %}
+                <div class="row g-4">
+                <!-- Proyectos -->
+                {% for proyecto in proyectos %}
+                    <div class="col-md-6 col-lg-4">
                     <article class="card tarjeta-proyecto">
-                        <div class="proyecto-cabecera"><i class="fa fa-server"></i></div>
+                        <div class="proyecto-cabecera"><i class="fa {{ proyecto.icono }}"></i></div>
                         <div class="card-body">
-                            <h5 class="card-title">API de Gestión de Pedidos</h5>
-                            <p class="card-text">API REST para la gestión de pedidos e inventario, con autenticación JWT, documentación OpenAPI y tests de integración.</p>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge rounded-pill badge-habilidad">Java</span>
-                                <span class="badge rounded-pill badge-habilidad">Spring Boot</span>
-                                <span class="badge rounded-pill badge-habilidad">MySQL</span>
-                            </div>
+                            <h5 class="card-title">{{ proyecto.nombre }}</h5>
+                            <p class="card-text">{{ proyecto.descripcion }}</p>
+
+                            {% if proyecto.tecnologias.all %}
+
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+
+                                    {% for tecnologia in proyecto.tecnologias.all %}
+
+                                        <span class="badge rounded-pill badge-habilidad">{{ tecnologia }}</span>
+                                    {% endfor %}
+                                </div>
+
+                            {% endif %}
                             <div class="d-flex gap-3">
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
+
+                                {% if proyecto.url_codigo %}
+
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> {{ proyecto.url_codigo }}</a>
+                                {% endif %}
+
+                                {% if proyecto.url_demo %}
+
+                                    <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> {{ proyecto.url_demo }}</a>
+                                {% endif %}
+
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <!-- Proyecto 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <article class="card tarjeta-proyecto">
-                        <div class="proyecto-cabecera"><i class="fa fa-bar-chart"></i></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Panel de Administración</h5>
-                            <p class="card-text">Dashboard web con métricas en tiempo real, gestión de usuarios y exportación de informes en varios formatos.</p>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge rounded-pill badge-habilidad">TypeScript</span>
-                                <span class="badge rounded-pill badge-habilidad">React</span>
-                                <span class="badge rounded-pill badge-habilidad">Chart.js</span>
-                            </div>
-                            <div class="d-flex gap-3">
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                {% endfor %}
 
-                <!-- Proyecto 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <article class="card tarjeta-proyecto">
-                        <div class="proyecto-cabecera"><i class="fa fa-mobile"></i></div>
-                        <div class="card-body">
-                            <h5 class="card-title">App de Seguimiento de Gastos</h5>
-                            <p class="card-text">Aplicación móvil para el control de gastos personales, con sincronización en la nube y reportes mensuales automáticos.</p>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge rounded-pill badge-habilidad">Flutter</span>
-                                <span class="badge rounded-pill badge-habilidad">Dart</span>
-                                <span class="badge rounded-pill badge-habilidad">Firebase</span>
-                            </div>
-                            <div class="d-flex gap-3">
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> Código</a>
-                                <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> Demo</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
             </div>
+            {% else %}
+                 <p class="text-center">Próximamente iré publicando mis proyectos.</p>
+
+            {% endif %}
         </div>
     </section>
 {% endblock %}
