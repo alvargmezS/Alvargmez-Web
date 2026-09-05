@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 import os
 import os.path
 from pathlib import Path
-
+from django.contrib.messages import constants as mensajes
 from dotenv import load_dotenv
 
 
@@ -99,6 +99,14 @@ DATABASES = {
     }
 }
 
+#Email SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
@@ -148,11 +156,11 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-# Email
-# https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+MESSAGE_TAGS = {
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
+    mensajes.DEBUG: 'debug',
+    mensajes.INFO: 'info',
+    mensajes.WARNING: 'warning',
+    mensajes.ERROR: 'danger',
+    mensajes.SUCCESS: 'success',
 }
