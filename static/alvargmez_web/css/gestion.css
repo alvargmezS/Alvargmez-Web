@@ -127,12 +127,30 @@ section[id] {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* Stack tecnológico destacado bajo el CTA */
-.hero-stack {
+/* Etiqueta de sección dentro del hero */
+.hero-stack-titulo {
+  color: var(--c-azul-electrico);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Badge individual de tecnología sobre fondo oscuro */
+.badge-hero {
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4em 0.9em;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.badge-hero:hover {
+  background-color: rgba(91, 157, 249, 0.25);
+  border-color: var(--c-azul-electrico);
 }
 
 /* ------------------------------------------------------------

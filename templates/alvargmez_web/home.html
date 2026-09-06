@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_head %}
-    <meta name="description" content="Portafolio profesional de Álvaro Gómez, Desarrollador de Software. Proyectos, experiencia y contacto.">
+    <meta name="description" content="Portafolio profesional de Álvaro Gómez.">
 {% endblock extra_head %}
 
 {% block content %}
@@ -13,17 +13,33 @@
             <img class="foto-perfil" src="{% static 'alvargmez_web/img/perfil.jpg' %}" alt="Foto de perfil de Álvaro Gómez">
             <p class="hero-saludo mb-2">Hola, soy</p>
             <h1 class="hero-nombre mb-3">Álvaro Gómez</h1>
-            <h2 class="hero-titulo mb-4">Desarrollador de Software</h2>
+            <h2 class="hero-titulo mb-4">Desarrollador De Software</h2>
             <p class="hero-descripcion mb-4">
-                Diseño y construyo aplicaciones web robustas y escalables, con especial atención
-                a la calidad del código y a la experiencia de usuario.
+                Diseño y desarrollo lógica de servidor y aplicaciones robustas,
+                combinando backend en Python y Java con un firme compromiso por la calidad del código y la resolución de problemas
             </p>
             <!-- CTA principal -->
             <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
                 <a href="{% url 'proyectos' %}" class="btn btn-electrico btn-lg px-4">Ver proyectos</a>
                 <a href="{% url 'contacto' %}" class="btn btn-outline-light btn-lg px-4">Contactar</a>
             </div>
-            <p class="hero-stack mb-0">Java &middot; Jakarta EE &middot; Python &middot; Django &middot; HTML5 &middot; CSS &middot;Docker &middot; MySQL &middot; Postgres</p>
+            <h3 class="hero-stack-titulo mb-3">Tecnologías conocidas</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                <span class="badge rounded-pill badge-hero">Java</span>
+                <span class="badge rounded-pill badge-hero">Python</span>
+                <span class="badge rounded-pill badge-hero">Django</span>
+                <span class="badge rounded-pill badge-hero">HTML5</span>
+                <span class="badge rounded-pill badge-hero">CSS</span>
+                <span class="badge rounded-pill badge-hero">Docker</span>
+                <span class="badge rounded-pill badge-hero">MySQL</span>
+                <span class="badge rounded-pill badge-hero">Postgres</span>
+                <span class="badge rounded-pill badge-hero">Git</span>
+            </div>
+
+            <h3 class="hero-stack-titulo mb-3">Tecnologías en proceso de aprendizaje</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge rounded-pill badge-hero">Jakarta EE</span>
+            </div>
         </div>
     </section>
 
@@ -242,7 +258,7 @@
             </a>
             <div class="d-flex justify-content-center gap-3">
                 <a href="https://github.com/alvargmezS" class="icono-social" aria-label="GitHub"><i class="fa fa-github fa-lg"></i></a>
-                <a href="#" class="icono-social" aria-label="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/álvaro-gómez-sánchez-45b8a8434/" class="icono-social" aria-label="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
                 <a href="#" class="icono-social" aria-label="Twitter"><i class="fa fa-twitter fa-lg"></i></a>
             </div>
         </div>
