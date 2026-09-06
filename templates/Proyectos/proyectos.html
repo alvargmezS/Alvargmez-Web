@@ -1,12 +1,6 @@
 {% extends 'alvargmez_web/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Proyectos</title>
-</head>
-<body>
+{% block title %} Proyectos {% endblock %}
 
 {% block content %}
     <!-- ==================== Proyectos destacados ==================== -->
@@ -67,5 +61,5 @@
         </div>
     </section>
 {% endblock %}
-</body>
-</html>
+
+{% block volver_arriba %}#proyectos{% endblock volver_arriba %}
