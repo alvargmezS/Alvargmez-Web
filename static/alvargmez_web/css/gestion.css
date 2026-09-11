@@ -76,6 +76,13 @@ section[id] {
   color: var(--c-azul-electrico);
 }
 
+/* Apertura del desplegable "Inicio" al pasar el ratón (solo escritorio) */
+@media (min-width: 992px) {
+  .navbar-portafolio .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
 /* ------------------------------------------------------------
    4. Hero (presentación del perfil)
    ------------------------------------------------------------ */
@@ -449,7 +456,17 @@ section[id] {
 }
 
 /* ------------------------------------------------------------
-   13. Ajustes responsive y accesibilidad
+   13. Blog
+   ------------------------------------------------------------ */
+/* Aviso de sección en construcción (borde discontinuo) */
+.tarjeta-proximamente {
+  border: 1px dashed rgba(61, 90, 128, 0.35);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   14. Ajustes responsive y accesibilidad
    ------------------------------------------------------------ */
 @media (max-width: 575.98px) {
   .hero {

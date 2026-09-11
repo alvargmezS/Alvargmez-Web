@@ -32,6 +32,8 @@ urlpatterns = [
     path('proyectos/', include('proyectosApp.urls')),
 
     path('contacto/', include('contactoApp.urls')),
+
+    path('blog/', include('blogApp.urls')),
 ]
 
 # Ficheros de media en desarrollo

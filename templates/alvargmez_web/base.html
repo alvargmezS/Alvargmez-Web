@@ -37,12 +37,20 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavegacion">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#sobre-mi">Sobre mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#habilidades">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}#experiencia">Experiencia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'proyectos' %}">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                           href="{% url 'home' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">Inicio</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{% url 'home' %}">Portada</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'home' %}#sobre-mi">Sobre mí</a></li>
+                            <li><a class="dropdown-item" href="{% url 'home' %}#habilidades">Habilidades</a></li>
+                            <li><a class="dropdown-item" href="{% url 'home' %}#experiencia">Experiencia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'proyectos' %}active{% endif %}" href="{% url 'proyectos' %}">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'contacto' %}active{% endif %}" href="{% url 'contacto' %}">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}" href="{% url 'blog' %}">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -60,13 +68,14 @@
     <!-- ==================== Pie de página ==================== -->
     <footer class="footer py-4 mt-auto">
         <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-            <span>&copy; 2026 Álvaro Gómez. Todos los derechos reservados.</span>
+            <span>&copy; 2026 Álvaro Gómez. Diseñado y desarrollado con Django .</span>
             <a href="{% block volver_arriba %}{% url 'home' %}#inicio{% endblock volver_arriba %}"><i class="fa fa-arrow-up me-1"></i>Volver arriba</a>
         </div>
     </footer>
 
     <!-- Bootstrap 5 (bundle incluye Popper) -->
     <script src="{% static 'alvargmez_web/vendor/bootstrap5/js/bootstrap.bundle.min.js' %}"></script>
+
     {% block extra_js %}
     {% endblock extra_js %}
 

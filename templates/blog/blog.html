@@ -1,0 +1,90 @@
+{% extends 'alvargmez_web/base.html' %}
+
+{% block title %}Blog | Álvaro Gómez{% endblock title %}
+
+{% block extra_head %}
+    <meta name="description" content="Bitácora de sistemas y desarrollo: despliegue de esta web, servidor, red y servicios autohospedados.">
+{% endblock extra_head %}
+
+{% block content %}
+
+    <!-- ==================== Blog ==================== -->
+    <section id="blog" class="seccion">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="titulo-seccion">Bitácora de Sistemas y Desarrollo</h2>
+                <div class="separador mx-auto my-3"></div>
+                <p class="subtitulo-seccion mx-auto mb-0">
+                    Un espacio donde documentaré el despliegue de esta web, el funcionamiento
+                    de mi servidor y mi red, y el montaje de servicios.
+                </p>
+            </div>
+
+            <!-- Aviso de sección en construcción -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8">
+                    <div class="card tarjeta-proximamente text-center">
+                        <div class="card-body p-5">
+                            <span class="icono-categoria"><i class="fa fa-rss"></i></span>
+                            <h3 class="h4 mb-3">Próximamente</h3>
+                            <p class="text-secondary mb-0">
+                                Iré publicando entradas paso a paso: decisiones tomadas,
+                                problemas encontrados y cómo los resolví.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temas previstos -->
+            <h3 class="cifra-etiqueta text-center mb-4">Temas previstos</h3>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tarjeta-habilidad h-100">
+                        <div class="card-body">
+                            <span class="icono-categoria"><i class="fa fa-rocket"></i></span>
+                            <h5 class="card-title mb-3">Despliegue de esta web</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill badge-habilidad">Django</span>
+                                <span class="badge rounded-pill badge-habilidad">Docker</span>
+                                <span class="badge rounded-pill badge-habilidad">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tarjeta-habilidad h-100">
+                        <div class="card-body">
+                            <span class="icono-categoria"><i class="fa fa-server"></i></span>
+                            <h5 class="card-title mb-3">Servidor y red</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill badge-habilidad">Linux</span>
+                                <span class="badge rounded-pill badge-habilidad">Redes TCP/IP</span>
+                                <span class="badge rounded-pill badge-habilidad">Ciberseguridad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tarjeta-habilidad h-100">
+                        <div class="card-body">
+                            <span class="icono-categoria"><i class="fa fa-cubes"></i></span>
+                            <h5 class="card-title mb-3">Servicios autohospedados</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill badge-habilidad">Nextcloud</span>
+                                <span class="badge rounded-pill badge-habilidad">Docker Compose</span>
+                                <span class="badge rounded-pill badge-habilidad">NGINX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+{% block volver_arriba %}#blog{% endblock volver_arriba %}
