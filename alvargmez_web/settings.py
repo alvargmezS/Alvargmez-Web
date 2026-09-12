@@ -27,9 +27,9 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['web.alvargmez.work', '127.0.0.1']
+ALLOWED_HOSTS = ['web.alvargmez.work', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -56,6 +56,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -148,12 +149,25 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+# Destino de collectstatic (STATICFILES_DIRS es el origen)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Media (ficheros subidos por el usuario, p. ej. el CV)
 # https://docs.djangoproject.com/en/6.1/topics/files/
 
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# whitenoise: comprime y versiona los estáticos servidos en producción
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 
 MESSAGE_TAGS = {
