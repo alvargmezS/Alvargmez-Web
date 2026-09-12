@@ -169,6 +169,9 @@ STORAGES = {
     },
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web.alvargmez.work',
+]
 
 MESSAGE_TAGS = {
 
