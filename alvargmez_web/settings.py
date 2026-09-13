@@ -181,3 +181,29 @@ MESSAGE_TAGS = {
     mensajes.ERROR: 'danger',
     mensajes.SUCCESS: 'success',
 }
+
+# Logging: con DEBUG=False los errores 500 solo se envian por correo (mail_admins),
+# se envian tambien a la consola para poder verlos en journalctl.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {name} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
