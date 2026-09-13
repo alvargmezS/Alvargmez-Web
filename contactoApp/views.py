@@ -26,7 +26,7 @@ def contacto(request):
                                  "web@alvargmez.es", ["web@alvargmez.es"], reply_to=[email])
 
             emailrespuesta = EmailMessage("Mensaje de web.alvargmez.es",
-                                 f'Has enviado un mensaje a traves de web.alvargmez.es Con el siguiente contenido: \n\n {contenido} \n\n Contactaremos lo antes posible\n\n Saludos',
+                                 f'Has enviado un mensaje a traves de web.alvargmez.work Con el siguiente contenido: \n\n {contenido} \n\n Contactaremos lo antes posible\n\n Saludos',
                                  "web@alvargmez.es", [f'{email_respuesta}'], reply_to=['web@alvargmez.es'])
 
 
