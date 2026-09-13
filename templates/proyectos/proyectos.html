@@ -38,12 +38,12 @@
 
                                 {% if proyecto.url_codigo %}
 
-                                    <a href="#" class="enlace-proyecto"><i class="fa fa-github"></i> {{ proyecto.url_codigo }}</a>
+                                    <a href="{{ proyecto.url_codigo }}" class="enlace-proyecto"><i class="fa fa-github"></i> </a>
                                 {% endif %}
 
                                 {% if proyecto.url_demo %}
 
-                                    <a href="#" class="enlace-proyecto"><i class="fa fa-external-link"></i> {{ proyecto.url_demo }}</a>
+                                    <a href="{{ proyecto.url_demo }}" class="enlace-proyecto"><i class="fa fa-external-link"></i> </a>
                                 {% endif %}
 
                             </div>
