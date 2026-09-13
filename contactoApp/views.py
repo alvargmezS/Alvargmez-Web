@@ -1,12 +1,8 @@
-import logging
-
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 
 from contactoApp.forms import FormContacto
-
-logger = logging.getLogger(__name__)
 
 
 # Create your views here.
@@ -27,11 +23,11 @@ def contacto(request):
 
             email = EmailMessage("Mensaje desde Formulario de contacto Alvargmez-web",
                                  f'Nombre: {nombre} \n\n Empresa: {empresa} \n\n {contenido} \n\n {email}',
-                                 "web@alvargmez.es", ["work@alvargmez.es"], reply_to=[email])
+                                 "web@alvargmez.es", ["web@alvargmez.es"], reply_to=[email])
 
             emailrespuesta = EmailMessage("Mensaje de web.alvargmez.es",
                                  f'Has enviado un mensaje a traves de web.alvargmez.es Con el siguiente contenido: \n\n {contenido} \n\n Contactaremos lo antes posible\n\n Saludos',
-                                 "web@alvargmez.es", [f'{email_respuesta}'], reply_to=['work@alvargmez.es'])
+                                 "web@alvargmez.es", [f'{email_respuesta}'], reply_to=['web@alvargmez.es'])
 
 
             try:
@@ -41,7 +37,6 @@ def contacto(request):
                 return redirect('contacto')
 
             except Exception:
-                logger.exception('Error enviando el formulario de contacto')
                 messages.error(request, 'No se pudo enviar el mensaje, inténtalo de nuevo más tarde.')
                 return redirect('contacto')
 
